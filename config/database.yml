@@ -16,6 +16,8 @@
 #
 default: &default
   adapter: postgresql
+  username: eventbrite
+  password: <%= ENV['EVENTBRITE_DATABASE_PASSWORD'] %>
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
@@ -81,5 +83,3 @@ test:
 production:
   <<: *default
   database: eventbrite_production
-  username: eventbrite
-  password: <%= ENV['EVENTBRITE_DATABASE_PASSWORD'] %>
