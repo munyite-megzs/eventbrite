@@ -11,4 +11,5 @@ class Event < ActiveRecord::Base
       [:title, :location],
       [:title, :location, :agenda],
     ]
+  end
 end
