@@ -15,4 +15,10 @@ class Event < ActiveRecord::Base
       [:title, :location, :agenda],
     ]
   end
+
+  def all_tags=(names)
+    self.tags = names.split(",").map do |t|
+      Tag.where(name: t.split).first_or_create!
+    end
+  end
 end
