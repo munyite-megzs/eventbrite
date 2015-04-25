@@ -21,4 +21,7 @@ class Event < ActiveRecord::Base
       Tag.where(name: t.split).first_or_create!
     end
   end
+
+  def all_tags
+  end
 end
