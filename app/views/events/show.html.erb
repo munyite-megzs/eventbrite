@@ -32,11 +32,11 @@
 
 <p>
   <strong>Organizer:</strong>
-  <%= @event.organizer_id %>
+  <%= @event.organizer.email %>
 </p>
 
 <p>
-  Tags: <%= @event.all_tags %> 
+  Tags: <%= @event.all_tags %>
 </p>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
