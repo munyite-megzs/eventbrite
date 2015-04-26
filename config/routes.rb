@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :events
 
   root 'events#index'
+
+  get 'tags/:tag', to: 'events#index', as: :tag
 end
