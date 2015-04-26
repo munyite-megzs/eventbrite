@@ -4,7 +4,11 @@ class EventsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @events = Event.all
+    if params[:tag]
+      @events = Event.tagged_with(params[:tag])
+    else
+      @events = Event.all
+    end
   end
 
   def show
