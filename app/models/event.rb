@@ -27,6 +27,6 @@ class Event < ActiveRecord::Base
   end
 
   def self.tagged_with(name)
-    Tag.find_by_name!(name).events
+    Tag.find_by!(:name).events
   end
 end
