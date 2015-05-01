@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event_owner = @event.event_owner
+    @event_owners = @event.organizers
   end
 
   def new
