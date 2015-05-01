@@ -33,4 +33,8 @@ class Event < ActiveRecord::Base
   def self.tag_counts
     Tag.select("tags.name, count(taggings.tag_id) as count").joins(:taggings).group("taggings.tag_id")
   end
+
+  def self.event_owner(organizer_id)
+    User.find_by: organizer_id
+  end
 end
