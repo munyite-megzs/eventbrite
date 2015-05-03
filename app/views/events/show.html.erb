@@ -32,10 +32,10 @@
 
 <p>
   <strong>Organized by:</strong>
-  <%= @event_owners.each do |event_owner| %>
-  <%= image_tag(avatar_url(event_owner)) %>
-  <%= event_owner.email %>
-  <% end %>
+  <!-- <%# @event_owner.each do |event_owner| %> -->
+  <%= image_tag(avatar_url(@event_owner)) %>
+  <%= @event_owner.email %>
+  <!-- <%# end %> -->
 </p>
 
 <p>
