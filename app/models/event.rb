@@ -38,6 +38,6 @@ class Event < ActiveRecord::Base
   end
 
   def self.event_owner(organizer_id)
-    User.find_by: organizer_id
+    User.find_by organizer_id
   end
 end
