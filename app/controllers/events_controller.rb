@@ -3,6 +3,12 @@ class EventsController < ApplicationController
   before_action :event_owner!, only: [:edit, :update, :destroy]
   before_filter :authenticate_user!
 
+  def join
+    @attendance = Attendance.join_event(current_user.id, params[:event_id], 'request_sent')
+    'Request Sent' if @attendance.save
+    respond_with @attendace
+  end
+
   def index
     if params[:tag]
       @events = Event.tagged_with(params[:tag])
