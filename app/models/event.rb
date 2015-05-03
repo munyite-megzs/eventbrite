@@ -8,6 +8,9 @@ class Event < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
+  has_many :attendances
+  has_many :users, :through => :attendances
+
   def slug_candidates
     [
       :name,
